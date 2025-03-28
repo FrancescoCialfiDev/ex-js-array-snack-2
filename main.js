@@ -186,8 +186,15 @@ console.log(booksByPricein)
 
 // Usa reduce per creare un oggetto (tagCounts) che conta quante volte ogni tag viene usato tra i libri.
 
-const tagCounts = books.reduce((accumulatore, books) => {
-
+const tagCounts = books.reduce((accumulatore, book) => {
+    book.tags.forEach((tag) => {
+        if (accumulatore[tag]) {
+            accumulatore[tag]++
+        } else {
+            accumulatore[tag] = 1
+        }
+    })
+    return accumulatore
 }, {});
 console.log(tagCounts);
 
