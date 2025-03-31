@@ -118,7 +118,8 @@ console.log(ages)
 
 // Calcola la somma delle età (agesSum) usando reduce. 
 const somma2 = ages.reduce((acc, curr) => {
-    return acc + curr
+    const somma = acc + curr
+    return somma
 }, 0)
 console.log(somma2)
 
